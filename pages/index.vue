@@ -8,11 +8,6 @@ const products = computed(() => {
   return productsStore.products
 })
 
-async function retrieveProducts() {
-  await productsStore.retrieveProducts()
-}
-
-await retrieveProducts()
 </script>
 
 <template>
