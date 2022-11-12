@@ -9,7 +9,7 @@ const cartItems = computed(() => {
 })
 
 async function checkout() {
-  //return await cartStore.startCheckout()
+  return await cartStore.startCheckout()
 }
 
 
@@ -17,14 +17,14 @@ async function checkout() {
 <template>
   <div class="px-12 mt-12">
     <div class="flex justify-between border-b p-2 font-medium bg-gray-100 items-center">
-      <div>Product Name</div>
-      <div>Quantity</div>
-      <div>Sub total</div>
+      <div class="w-1/3">Product Name</div>
+      <div class="w-1/3 text-center">Quantity</div>
+      <div class="w-1/3">Sub total</div>
     </div>
     <div class="flex justify-between border-b p-2 font-normal" v-for="item in cartItems" :key="item.productId">
-      <div>{{ item.productName }}</div>
-      <div>{{ item.quantity }}</div>
-      <div>{{ item.subTotal.toLocaleString() }}</div>
+      <div class="w-1/3">{{ item.productName }}</div>
+      <div class="w-1/3 text-center">{{ item.quantity }}</div>
+      <div class="w-1/3">{{ item.subTotal.toLocaleString() }}</div>
     </div>
     <div v-if="cartItems.length > 0">
       <div class="my-8 flex flex-col items-end justify-center">

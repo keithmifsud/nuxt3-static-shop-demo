@@ -13,9 +13,9 @@ const cartItems = computed(() => {
       class=""
       :class="{ disabled: cartItems.length < 1 }"
   >
-    <div>
+    <div class="relative">
       <div
-          class="absolute top-2 right-1 bg-indigo-600 text-indigo-100 rounded-full text-xs h-5 w-5 text-center flex justify-center justify-content-center flex-col"
+          class="absolute -top-2 -right-2 bg-indigo-600 text-indigo-100 rounded-full text-xs h-5 w-5 text-center flex justify-center justify-content-center flex-col"
           v-if="cartItems.length > 0"
       >
         {{cartItems.length}}

@@ -37,7 +37,17 @@ export const useCartStore = definePiniaStore(
 
       async startCheckout() {
         return await new Promise((resolve, reject) => {
-          resolve()
+          const { data } = useFetch(() =>
+            '/api/checkout',
+            {
+              method: 'POST',
+              body: {
+                cartItems: this.items,
+              }
+            }
+          )
+
+          console.log('data', data)
         })
       }
     },
