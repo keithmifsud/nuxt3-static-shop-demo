@@ -12,8 +12,9 @@ await retrieveProducts()
 <template>
   <div class="min-h-screen">
     <header>
-      <div class="flex w-screen bg-gray-100 h-16 px-4 text-gray-800 items-center">
+      <div class="flex w-screen bg-gray-100 h-16 px-4 text-gray-800 items-center justify-between">
         <NuxtLink to="/">My Shop</NuxtLink>
+        <ShoppingCartLink />
       </div>
     </header>
     <main class="p-4">

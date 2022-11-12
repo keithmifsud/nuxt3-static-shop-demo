@@ -1,7 +1,9 @@
 <script setup>
 import { useProductsStore } from '../../stores/products'
+import { useCartStore } from '../../stores/cart'
 
 const productsStore = useProductsStore()
+const cartStore = useCartStore()
 const route = useRoute()
 
 const product = computed(() => {
@@ -11,6 +13,15 @@ const product = computed(() => {
 })
 
 const image = useAssets(`/assets/images/products/${product.value.image}`)
+
+async function addToCart() {
+  await cartStore.addToCart({
+    id: product.value.id,
+    name: product.value.name,
+    price: product.value.price,
+    currency: 'gbp',
+  })
+}
 
 </script>
 <template>
@@ -30,8 +41,9 @@ const image = useAssets(`/assets/images/products/${product.value.image}`)
         <div class="my-8 flex flex-col items-center justify-center">
           <button
               class="px-6 py-4 bg-indigo-600 hover:bg-indigo-700 text-indigo-200 rounded-lg"
+              v-on:click="addToCart"
           >
-            Buy Now @ £{{ product.price }}
+            Add to Cart @ £{{ product.price }}
           </button>
         </div>
       </div>

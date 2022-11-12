@@ -8,5 +8,6 @@ export default {
       }
     }
   },
-  content: [],
+  content: [
+  ],
 }

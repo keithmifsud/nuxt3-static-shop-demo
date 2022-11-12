@@ -12,6 +12,7 @@
     "nuxt": "3.0.0-rc.13"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.3"
+    "@pinia/nuxt": "^0.4.3",
+    "stripe": "^10.17.0"
   }
 }
