@@ -10,7 +10,7 @@ Feel free to use this code as you wish 😃
 
 ## Usage
 
-If you'd like to use this code as a starting for your static NUxt3 online store, simpy clone it:
+If you'd like to use this code as a starting point for your static Nuxt3 online store, simpy clone it:
 
 ```shell
 git clone git@github.com:keithmifsud/nuxt3-static-shop-demo.git
