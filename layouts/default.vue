@@ -10,6 +10,9 @@ async function retrieveProducts() {
 await retrieveProducts()
 </script>
 <template>
+  <Head>
+    <Title>My Shop</Title>
+  </Head>
   <div class="min-h-screen">
     <header>
       <div class="flex w-screen bg-gray-100 h-16 px-4 text-gray-800 items-center justify-between">

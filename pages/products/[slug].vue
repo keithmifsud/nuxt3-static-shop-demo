@@ -26,6 +26,9 @@ async function addToCart() {
 
 </script>
 <template>
+  <Head>
+    <Title>{{ product.name }} - My Shop</Title>
+  </Head>
   <div>
     <div class="flex mt-12 p-4">
       <div class="w-1/2">
