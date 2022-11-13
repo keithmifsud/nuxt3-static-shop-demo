@@ -1,11 +1,12 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  nitro: {
-    preset: 'node-server'
-  },
   runtimeConfig: {
-    stripePk: '',
-  },
+    public: {
+      appUrl: 'http://localhost:3000',
+      stripePk: 'pk_test_xxxxxxxxxxxxxxxxxxxxxx',
+    },
+  }
+  ,
   modules: [
     [
       '@pinia/nuxt',

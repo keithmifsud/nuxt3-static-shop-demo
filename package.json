@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.3",
-    "stripe": "^10.17.0"
+    "@stripe/stripe-js": "^1.44.1"
   }
 }

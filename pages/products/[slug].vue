@@ -20,6 +20,7 @@ async function addToCart() {
     name: product.value.name,
     price: product.value.price,
     currency: 'gbp',
+    stripePriceId: product.value.stripePriceId,
   })
 }
 

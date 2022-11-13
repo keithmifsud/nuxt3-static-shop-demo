@@ -4,13 +4,15 @@
     "name": "Hey Sunglasses!",
     "price": 10.99,
     "image": "sunglasses.jpg",
-    "slug": "hey-sunglasses"
+    "slug": "hey-sunglasses",
+    "stripePriceId": "price_1M3cNpJ54Rta1TGWG1dk5aI5"
   },
   {
     "id": 2,
     "name": "Fruity Shoes",
     "price": 99.01,
     "image": "shoes.jpg",
-    "slug": "fruity-shoes"
+    "slug": "fruity-shoes",
+    "stripePriceId": "price_1M3cvQJ54Rta1TGWYznZxCKu"
   }
 ]

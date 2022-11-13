@@ -1,4 +1,5 @@
-import { useFetch } from 'nuxt/app'
+import { useRuntimeConfig } from 'nuxt/app'
+import { loadStripe } from '@stripe/stripe-js'
 
 export const useCartStore = definePiniaStore(
   'cart-store',
@@ -30,24 +31,29 @@ export const useCartStore = definePiniaStore(
             price: itemPayload.price,
             currency: itemPayload.currency || 'gbp',
             quantity: 1,
-            subTotal: itemPayload.price
+            subTotal: itemPayload.price,
+            stripePriceId: itemPayload.stripePriceId,
           })
         }
       },
 
-      async startCheckout() {
-        return await new Promise((resolve, reject) => {
-          const { data } = useFetch(() =>
-            '/api/checkout',
-            {
-              method: 'POST',
-              body: {
-                cartItems: this.items,
-              }
-            }
-          )
+      async takePayment() {
+        const config = useRuntimeConfig()
+        const stripe = await loadStripe(config.public.stripePk)
 
-          console.log('data', data)
+        const lineItems = []
+        this.items.forEach(cartItem => {
+          lineItems.push({
+            price: cartItem.stripePriceId,
+            quantity: cartItem.quantity,
+          })
+        })
+
+        const { error } = await stripe.redirectToCheckout({
+          lineItems: lineItems,
+          mode: 'payment',
+          successUrl: `${config.public.appUrl}/success`,
+          cancelUrl: `${config.public.appUrl}`,
         })
       }
     },
